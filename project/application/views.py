@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from rest_framework import generics
-from .serializer import userserializer,commentserializer,replyserializer
+from .serializer import userserializer,commentserializer,replyserializer,usersommentserializer,usersreplyserializer
 from rest_framework.response import Response
 from .models import comments,replies
 from .permission import editpermission
@@ -28,15 +28,15 @@ class commentview(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
            
-
-
-
-
 class commentviewsingle(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=[editpermission,IsAuthenticated]
     queryset=comments.objects.all()
     serializer_class=commentserializer
     lookup_url_kwarg="comment_id"
+
+
+
+
 
 #--------reply-----------
 class replyview(generics.ListCreateAPIView):
@@ -56,6 +56,21 @@ class replyviewsimgle(generics.RetrieveUpdateDestroyAPIView):
 
 
 
+class usercomment(generics.ListAPIView):
+    serializer_class=usersommentserializer
+
+    def get_queryset(self):
+        username=self.kwargs["username"]
+        # user_id=User.objects.get(id=username)
+        return comments.objects.filter(user__username=username)
+    
+
+class userreplies(generics.ListAPIView):
+    serializer_class=usersreplyserializer
+    def get_queryset(self):
+        return replies.objects.filter(user__username=self.kwargs["username"])
+        
+    
 
 
 

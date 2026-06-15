@@ -37,4 +37,15 @@ class commentserializer(serializers.ModelSerializer):
         model=comments
         fields=["comment","all_comments_from_replies","id"]
 
+
+class usersommentserializer(serializers.ModelSerializer):
+    class Meta:
+        model=comments
+        fields=["comment"]
+class usersreplyserializer(serializers.ModelSerializer):
+    class Meta:
+        model=replies
+        fields=["reply"]
+
+    
     
