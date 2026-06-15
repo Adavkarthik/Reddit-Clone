@@ -7,7 +7,7 @@ urlpatterns = [
     path("refreshtoken",TokenObtainPairView.as_view(),name="Refreshtoken"),
     path("register",register.as_view(),name="Register"),
     path('comment',commentview.as_view(),name="Comments"),
-    path('comment/<int:pk>',commentviewsingle.as_view(),name="Comments"),
+    path('comment/<int:comment_id>',commentviewsingle.as_view(),name="Comments"),
     path('comment/<int:comment_id>/reply',replyview.as_view(),name="Comments"),
-    path('comment/<int:comment_id>/reply/<int:pk>',replyviewsimgle.as_view(),name="Comments"),
+    path('comment/<int:comment_id>/reply/<int:reply_id>',replyviewsimgle.as_view(),name="Comments"),
 ]

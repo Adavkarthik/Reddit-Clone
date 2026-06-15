@@ -27,27 +27,34 @@ class commentview(generics.ListCreateAPIView):
     serializer_class=commentserializer
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+           
+
+
+
 
 class commentviewsingle(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=[editpermission,IsAuthenticated]
     queryset=comments.objects.all()
     serializer_class=commentserializer
+    lookup_url_kwarg="comment_id"
 
 #--------reply-----------
 class replyview(generics.ListCreateAPIView):
     permission_classes=[editpermission,IsAuthenticated]
+    queryset=replies.objects.all()
     serializer_class=replyserializer
     def get_queryset(self):
-        model=replies.objects.filter(comment=self.kwargs["comment_id"])
-        return model
-    def perform_create(self,serializer):
-        comment_id=get_object_or_404(comments,id=self.kwargs["comment_id"])
-        data=serializer.save(comment=comment_id,user=self.request.user)
+        return replies.objects.filter(comment=self.kwargs["comment_id"])
+    def perform_create(self, serializer):
+        serializer.save(comment=comments.objects.get(id=self.kwargs["comment_id"]),user=self.request.user)
 
 class replyviewsimgle(generics.RetrieveUpdateDestroyAPIView):
     permission_classes=[editpermission,IsAuthenticated]
     queryset=replies.objects.all()
     serializer_class=replyserializer
+    lookup_url_kwarg="reply_id"        
+
+
 
 
 
