@@ -2,17 +2,15 @@
     margin-top: 10px;
     height:500px;
     overflow-y: auto;
-    width:800px;
-    /* background: #222324; */
-    /* border: 1px solid ; */
-    /* padding-left: 10px; */
-    /* padding-top: 10px; */
+    width:750px;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
 
 }
 
 /* Each Comment */
 .comment-card{
-    border-bottom: 1px solid #d7dadc;
+    border-bottom: 1px solid #cdc6c6;
     padding: 20px 25px;
 }
 
@@ -28,7 +26,6 @@
 .comment-text{
     color: #d7dadc;
     font-size: 16px;
-    line-height: 1.6;
     max-width: 600px;
     margin-left: 15px;
 }
@@ -36,8 +33,8 @@
 /* Button Section */
 .action-section{
     display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
+    justify-content: flex-start;
+    margin-top: 30px;
 }
 
 .reply-btn{
@@ -59,3 +56,9 @@
 .reply-btn:hover{
     background: #ff5f45;
 }
+
+
+.comments-container::-webkit-scrollbar{
+    display: none; /* Chrome, Edge, Safari */
+}
+

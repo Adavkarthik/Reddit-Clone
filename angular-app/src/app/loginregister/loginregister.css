@@ -1,0 +1,62 @@
+.popup{
+    width:500px;
+    background:#1A1A1B;
+    color:white;
+
+    padding:30px;
+    border-radius:12px;
+
+    position:relative;
+}
+
+.popup h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.popup input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+
+    background:#272729;
+    border:none;
+    border-radius:25px;
+
+    color:white;
+}
+
+.login-btn{
+    width:100%;
+    padding:12px;
+
+    border:none;
+    border-radius:25px;
+
+    background:#FF4500;
+    color:white;
+
+    cursor:pointer;
+}
+
+.close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    border:none;
+    background:none;
+
+    color:white;
+    font-size:22px;
+
+    cursor:pointer;
+}
+.popup{
+    width: 900px;
+    background: #1A1A1B;
+    border-radius: 12px;
+    padding: 30px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}

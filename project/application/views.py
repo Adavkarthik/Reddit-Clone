@@ -11,8 +11,6 @@ from rest_framework.permissions import IsAuthenticated
 
 from django.shortcuts import render
 
-def homepage(request):
-    return render(request, "index.html")
 class register(generics.ListCreateAPIView):
     queryset=User.objects.all()
     serializer_class=userserializer
@@ -26,25 +24,23 @@ class register(generics.ListCreateAPIView):
 
 #---------comments-----------
 class commentview(generics.ListCreateAPIView):
-    permission_classes=[IsAuthenticated]
+    # permission_classes=[IsAuthenticated]
     queryset=comments.objects.all()
     serializer_class=commentserializer
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
            
 class commentviewsingle(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes=[editpermission,IsAuthenticated]
+    # permission_classes=[editpermission,IsAuthenticated]
     queryset=comments.objects.all()
     serializer_class=commentserializer
     lookup_url_kwarg="comment_id"
 
 
 
-
-
 #--------reply-----------
 class replyview(generics.ListCreateAPIView):
-    permission_classes=[editpermission,IsAuthenticated]
+    # permission_classes=[editpermission,IsAuthenticated]
     queryset=replies.objects.all()
     serializer_class=replyserializer
     def get_queryset(self):
@@ -53,7 +49,7 @@ class replyview(generics.ListCreateAPIView):
         serializer.save(comment=comments.objects.get(id=self.kwargs["comment_id"]),user=self.request.user)
 
 class replyviewsimgle(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes=[editpermission,IsAuthenticated]
+    # permission_classes=[editpermission,IsAuthenticated]
     queryset=replies.objects.all()
     serializer_class=replyserializer
     lookup_url_kwarg="reply_id"        

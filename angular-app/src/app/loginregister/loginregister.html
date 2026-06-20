@@ -1,0 +1,66 @@
+<div class="popup">
+    <button
+        class="close-btn"
+        (click)="closePopup()">
+        ✕
+    </button>
+
+    <div class="form-container">
+
+        <div class="login-section">
+
+            <h2>Log In</h2>
+
+            <input
+                type="text"
+                placeholder="Username"
+                [(ngModel)]="username">
+
+            <input
+                type="password"
+                placeholder="Password"
+                [(ngModel)]="password">
+
+            <button
+                class="action-btn"
+                (click)="login()">
+                Log In
+            </button>
+
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="divider"></div>
+
+        <!-- Register Section -->
+        <div class="register-section">
+
+            <h2>Register</h2>
+
+            <input
+                type="text"
+                placeholder="Username" [(ngModel)]="username">
+
+            <input
+                type="email"
+                placeholder="Email" [(ngModel)]="email">
+
+            <input
+                type="password"
+                placeholder="Password" [(ngModel)]="password">
+
+            <input
+                type="password"
+                placeholder="Confirm Password" [(ngModel)]="password2">
+
+            <button
+                class="action-btn"
+                (click)="register()">
+                Register
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

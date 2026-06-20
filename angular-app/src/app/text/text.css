@@ -15,7 +15,23 @@ body{
     display:flex;
     flex-direction:column;
 }
-
+.login_register
+{ 
+    margin-left:auto;   /* Pushes to right */
+    display:flex;
+    gap:8px;
+    padding-right:20px;
+}
+.login-btn,.register-btn{
+    margin-left:20px ;
+    border: none;
+    background: #FF4500;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;    
+    cursor: pointer;
+    font-weight: 600;
+}
 /* Top Heading */
 .header{
     flex-shrink:0; 
@@ -68,4 +84,21 @@ body{
 }
 .createcomment:hover{
     background-color: #ff5f1f;
+}
+.overlay{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0,0,0,0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
 }

@@ -5,10 +5,11 @@ import { Userservice } from '../userservice';
 import { Createcomponent } from '../createcomponent/createcomponent';
 import { CommonModule } from '@angular/common';
 import { Showcomments } from '../showcomments/showcomments';
+import { Loginregister } from '../loginregister/loginregister';
 
 @Component({
   selector: 'app-text',
-  imports: [RouterModule,FormsModule,Createcomponent,CommonModule,Showcomments,Createcomponent],
+  imports: [RouterModule,FormsModule,Createcomponent,CommonModule,Showcomments,Createcomponent,Loginregister],
   templateUrl: './text.html',
   styleUrl: './text.css',
 })
@@ -17,6 +18,16 @@ export class Text {
   showcomments:boolean=true;
 
   showcreatecomments:boolean=false;
+  showloginregister:boolean=false;
+
+  login()
+  {
+    this.showloginregister=true;
+  }
+  register()
+  {
+     this.showloginregister=true;
+  }
   opencomment()
   {
     this.showcreatecomments=true;
@@ -24,5 +35,9 @@ export class Text {
   closecomment()
   {
     this.showcreatecomments=false;
+  }
+  closeloginregister()
+  {
+    this.showloginregister=false;
   }
 }
