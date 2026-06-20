@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reddit Clone</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Comments</h2>
+
+    <div class="new-comment">
+        <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+        <button onclick="addComment()">Comment</button>
+    </div>
+
+    <div id="commentsContainer"></div>
+
+</div>
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

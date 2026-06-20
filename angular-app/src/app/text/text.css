@@ -1,0 +1,71 @@
+/* Remove default browser spacing */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+}
+
+/* Main Container */
+.container{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Top Heading */
+.header{
+    flex-shrink:0; 
+    height:55px;
+    background:#0E1113;
+    border-bottom:1px solid #343536;
+    display:flex;
+    align-items:center;
+    padding-left:10px;
+    font-size: 10px;
+}
+
+.header h1{
+    color:#FF4500;
+}
+
+/* Bottom Area */
+.content{
+    flex:1;
+    display:flex;
+}
+
+/* Left Div */
+.left-panel{
+    width:220px;
+    background:#0E1113;
+    border-right:1px solid #343536;
+    padding:20px;
+    color: aliceblue;
+}
+
+/* Right Div */
+.right-panel{
+    flex:1;
+    background:#0E1113;
+    padding:20px;
+    /* Makes only this section scrollable */
+    overflow-y:auto;
+}
+
+.createcomment{
+    border-radius: 30px;
+    padding: 6px;
+    background-color: #FF4500;
+    color:aliceblue;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    /* border-bottom: 10px; */
+}
+.createcomment:hover{
+    background-color: #ff5f1f;
+}

@@ -1,0 +1,58 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#dae0e6;
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+.new-comment{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+textarea{
+    width:100%;
+    min-height:80px;
+    resize:vertical;
+    padding:10px;
+    box-sizing:border-box;
+}
+
+button{
+    margin-top:10px;
+    padding:8px 16px;
+    border:none;
+    background:#ff4500;
+    color:white;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+.comment{
+    background:white;
+    padding:15px;
+    margin-top:10px;
+    border-radius:8px;
+    position:relative;
+}
+
+.reply-container{
+    margin-left:40px;
+    border-left:2px solid #ddd;
+    padding-left:15px;
+}
+
+.reply-box{
+    margin-top:10px;
+}
+
+.reply-box textarea{
+    min-height:60px;
+}

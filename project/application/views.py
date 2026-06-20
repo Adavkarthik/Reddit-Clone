@@ -9,6 +9,10 @@ from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticated 
 # Create your views here.
 
+from django.shortcuts import render
+
+def homepage(request):
+    return render(request, "index.html")
 class register(generics.ListCreateAPIView):
     queryset=User.objects.all()
     serializer_class=userserializer
@@ -56,14 +60,13 @@ class replyviewsimgle(generics.RetrieveUpdateDestroyAPIView):
 
 
 
+#----------------user comments and replies-----------------
 class usercomment(generics.ListAPIView):
     serializer_class=usersommentserializer
-
     def get_queryset(self):
         username=self.kwargs["username"]
         # user_id=User.objects.get(id=username)
         return comments.objects.filter(user__username=username)
-    
 
 class userreplies(generics.ListAPIView):
     serializer_class=usersreplyserializer
@@ -71,6 +74,7 @@ class userreplies(generics.ListAPIView):
         return replies.objects.filter(user__username=self.kwargs["username"])
         
     
+
 
 
 

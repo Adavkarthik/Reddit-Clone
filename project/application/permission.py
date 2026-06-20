@@ -8,6 +8,8 @@ class editpermission(BasePermission):
         print(request.user)
         print(obj.user.username)
         return request.user==obj.user
+
+
     
 
         

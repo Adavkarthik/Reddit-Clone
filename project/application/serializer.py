@@ -30,12 +30,12 @@ class userserializer(serializers.ModelSerializer):
 class replyserializer(serializers.ModelSerializer):
     class Meta:
         model=replies
-        fields=["reply","id"]
+        fields=["id","reply","comment_id"]
 class commentserializer(serializers.ModelSerializer):
     all_comments_from_replies=replyserializer(many=True,read_only=True)
     class Meta:
         model=comments
-        fields=["comment","all_comments_from_replies","id"]
+        fields=["id","comment","all_comments_from_replies"]
 
 
 class usersommentserializer(serializers.ModelSerializer):

@@ -1,0 +1,61 @@
+.comments-container{
+    margin-top: 10px;
+    height:500px;
+    overflow-y: auto;
+    width:800px;
+    /* background: #222324; */
+    /* border: 1px solid ; */
+    /* padding-left: 10px; */
+    /* padding-top: 10px; */
+
+}
+
+/* Each Comment */
+.comment-card{
+    border-bottom: 1px solid #d7dadc;
+    padding: 20px 25px;
+}
+
+/* Username */
+.username{
+    color: #d7dadc;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Comment Text */
+.comment-text{
+    color: #d7dadc;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: 15px;
+}
+
+/* Button Section */
+.action-section{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.reply-btn{
+    background: #e64a35;
+    color: white;
+
+    border: none;
+    border-radius: 20px;
+
+    padding: 8px 18px;
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.reply-btn:hover{
+    background: #ff5f45;
+}

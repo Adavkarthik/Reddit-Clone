@@ -1,0 +1,15 @@
+<div class="comment-box">
+
+    <textarea
+        placeholder="Add a comment"
+        [(ngModel)]="newcomment">
+    </textarea>
+
+    <div class="comment-actions">
+        <button class="cancel-btn" (click)="cancel()">Cancel</button>
+        <button class="post-btn" (click)="postcomment()">
+            Post
+        </button>
+    </div>
+
+</div>
